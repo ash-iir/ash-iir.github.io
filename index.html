@@ -141,6 +141,20 @@ h2::before{content:"// ";color:var(--dim)}
 .plink:hover svg{transform:translate(2px,-2px)}
 .p.private .plogo{cursor:default}
 
+/* Project gallery: original monogram artwork, not product screenshots. */
+.proj{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.p{grid-template-columns:1fr;gap:24px;padding:24px;align-content:start}
+.p:first-child{grid-column:1/-1;grid-template-columns:32% 1fr}
+.plogo{width:100%;height:156px;font-size:64px;overflow:hidden;color:rgba(4,18,14,.9)}
+.plogo::before{content:"";position:absolute;width:180px;height:180px;border:1px solid rgba(255,255,255,.35);border-radius:50%;box-shadow:0 0 0 28px rgba(255,255,255,.10),0 0 0 56px rgba(255,255,255,.07);transform:rotate(-30deg) scaleY(.65);transition:transform .7s}
+.p:hover .plogo{transform:none}
+.p:hover .plogo::before{transform:rotate(30deg) scaleY(.85)}
+.p .when{display:block}
+.p details{margin-top:12px;color:var(--dim);font-size:13px}
+.p summary{cursor:pointer;color:var(--acc);padding:4px 0}
+.p details p{font-size:14px}
+@media(max-width:700px){.proj{grid-template-columns:1fr}.p:first-child{grid-template-columns:1fr}.plogo{height:128px}}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--acc);outline-offset:5px}
 /* ---------- timeline ---------- */
 .tl{border-left:2px solid var(--line);padding-left:26px}
 .tl .j{margin-bottom:30px;position:relative}
@@ -174,7 +188,7 @@ footer .fine{margin-top:52px;color:var(--dim);font-size:12px;opacity:.75}
 
 @media(max-width:640px){
   .p{grid-template-columns:1fr;gap:16px}
-  .plogo{width:64px;height:64px;font-size:26px;border-radius:16px}
+  .plogo{width:100%;height:128px;font-size:52px;border-radius:16px}
   nav .wrap{padding:0 16px}
   nav ul{gap:14px;font-size:11px}
   nav ul a i{display:none}
@@ -281,7 +295,7 @@ footer .fine{margin-top:52px;color:var(--dim);font-size:12px;opacity:.75}
       <a class="plogo g2" href="https://momso.se" target="_blank" rel="noopener" aria-label="Visit momso.se">M</a>
       <div>
         <div class="top"><h3><a href="https://momso.se" target="_blank" rel="noopener">Momso</a> - Swedish bookkeeping</h3><span class="when">2025 - Apr 2026</span></div>
-        <p>Bookkeeping product for Swedish companies. Receipts and invoices come in by photo, upload or email, bank statements are imported and matched to them, and you review and approve the suggested bookings. Includes invoicing and payroll.</p>
+        <details><summary>Project details</summary><p>Bookkeeping product for Swedish companies. Receipts and invoices come in by photo, upload or email, bank statements are imported and matched to them, and you review and approve the suggested bookings. Includes invoicing and payroll.</p></details>
         <div class="chips"><span>Node.js</span><span>React</span><span>Invoicing</span><span>Payroll</span></div>
         <a class="plink" href="https://momso.se" target="_blank" rel="noopener">momso.se <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
       </div>
@@ -291,7 +305,7 @@ footer .fine{margin-top:52px;color:var(--dim);font-size:12px;opacity:.75}
       <a class="plogo g3" href="https://ringtaxi.nu" target="_blank" rel="noopener" aria-label="Visit ringtaxi.nu">R</a>
       <div>
         <div class="top"><h3><a href="https://ringtaxi.nu" target="_blank" rel="noopener">Ringtaxi</a> - taxi booking</h3><span class="when">2025 - Apr 2026</span></div>
-        <p>Taxi web product built together with La Sani. I wrote the SMS sending, checked the API integrations, and handled site speed and SEO.</p>
+        <details><summary>Project details</summary><p>Taxi web product built together with La Sani. I wrote the SMS sending, checked the API integrations, and handled site speed and SEO.</p></details>
         <div class="chips"><span>Node.js</span><span>APIs</span><span>SEO</span><span>Performance</span></div>
         <a class="plink" href="https://ringtaxi.nu" target="_blank" rel="noopener">ringtaxi.nu <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
       </div>
@@ -301,7 +315,7 @@ footer .fine{margin-top:52px;color:var(--dim);font-size:12px;opacity:.75}
       <a class="plogo g4" href="https://taxijob.se" target="_blank" rel="noopener" aria-label="Visit taxijob.se">T</a>
       <div>
         <div class="top"><h3><a href="https://taxijob.se" target="_blank" rel="noopener">Taxijob</a> - shift reports and pay</h3></div>
-        <p>Taxi drivers upload a shift report as a photo or file. The data is read automatically and pay is computed from saved commission, holiday-pay and tax percentages. Includes a fleet overview for taxi companies.</p>
+        <details><summary>Project details</summary><p>Taxi drivers upload a shift report as a photo or file. The data is read automatically and pay is computed from saved commission, holiday-pay and tax percentages. Includes a fleet overview for taxi companies.</p></details>
         <div class="chips"><span>Node.js</span><span>File parsing</span><span>Payroll logic</span></div>
         <a class="plink" href="https://taxijob.se" target="_blank" rel="noopener">taxijob.se <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
       </div>
